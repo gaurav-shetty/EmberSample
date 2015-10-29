@@ -1,0 +1,41 @@
+<h2>All Products</h2>
+
+<a href="#/new" class="btn btn-primary">New Product</a>
+
+<hr />
+
+<ul class="nav nav-pills">
+    {{#each model.categories as |category|}}
+        <li class="{{category.active}}">
+            {{#link-to "products" (query-params category=category)}}
+                {{category}}
+            {{/link-to}}
+        </li>
+    {{/each}}
+</ul>
+
+<hr />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    {{#each model.products as |product|}}
+        {{#if product}}
+        <tr>
+            <td>{{product.name}}</td>
+            <td>{{product.category}}</td>
+            <td>
+                {{#link-to "editProduct" product class="btn btn-success btn-small"}} Edit {{/link-to}}
+                <a {{action "deleteProduct" deleteProduct}} class="btn btn-danger btn-mini">Delete</a>
+            </td>
+        </tr>
+        {{/if}}
+    {{/each}}
+    </tbody>
+</table>

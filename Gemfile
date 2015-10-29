@@ -35,8 +35,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 # Include ember gems
-gem 'ember-rails'
+gem 'ember-cli-rails'
 gem 'ember-source', "~> 2.0.0"
+
+# include bootstrap
+gem 'bootstrap-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

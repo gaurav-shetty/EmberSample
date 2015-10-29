@@ -1,5 +1,9 @@
-// For more information see: http://emberjs.com/guides/routing/
+;(function(window, document, $) {
 
-EmberSample.Router.map(function() {
-  // this.resource('posts');
-});
+    EmberSample.Router.map(function() {
+        this.route('products');
+        this.route("newProduct", {path: "/products/new"});
+        this.route("editProduct", {path: "/product/:product_id"} )
+    });
+
+}(window, document, $));
